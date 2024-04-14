@@ -1,0 +1,161 @@
+.signup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 92vh;
+    background-color: whitesmoke;
+align-items: center;
+    color: black;
+    font-size: 20px;
+    font-family: "Khula",sans-serif;
+
+}
+.signup-login-container{
+    margin-top: 5%;
+    /* border: 1px solid white; */
+    height: 60vh;
+    border-radius: 10px;
+    width: 22vw;
+    background-color:white;
+}
+.label{
+    font-size: 15px;
+    font-family: "josephin sans",sans-serif;
+    font-weight: 200;
+}
+.signup-1{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+    position: relative;
+    
+}
+.signup-inpt{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    /* background-color: red; */
+    input{
+        outline: none;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 18px;
+        width: 100%;
+    }
+}
+
+
+
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 15px;
+    border-radius: 20px;
+    /* background-color: red; */
+}
+.signup-btn{
+    background-color: black;
+    width: 90%;
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    
+}
+.submit{
+    background-color: #0071e3;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-top: -20px;
+    width: 90%;
+    color: white;
+    font-weight: 600;
+    /* margin-top: 20px; */
+    font-family: "Josephin sans",sans-serif;
+}
+.turn-to-login{
+    font-family: "Josephin sans",sans-serif;
+    font-size: 12px;
+    margin-top: 4px;
+}
+.login-span{
+    color: black;
+    cursor: pointer;
+    font-weight: 700;
+    
+}
+#signup-2{
+    flex-direction: column-reverse;
+}
+.login-container{
+    height: 100%;
+    display: flex;
+    padding:  20px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    justify-content: center;
+    font-family: "Josephin sans",sans-serif;
+}
+.login-btn{
+    width: 95%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #0071e3;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-size: 17px;
+    
+
+}
+.err{
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #121212;    color: white;
+    padding: 5px 10px;
+    width: 90%;
+    text-align: center;
+    align-self: flex-start;
+    font-weight: 100;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.email-err{
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    font-weight: 550;
+    background-color: black;
+    top: -30px;
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+}
+@media (max-width:520px) {
+    .signup-login-container{
+        width: 80vw;
+        
+      
+    }
+    /* .submit{
+        width: 70%;
+    } */
+
+    
+}

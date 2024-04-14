@@ -1,0 +1,54 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProduct } from "../utils/utils";
+
+function Order() {
+  const { id } = useParams();
+  const [orders, setOrders] = useState([]);
+  const [productDetails, setProductDetails] = useState([]);
+
+  useEffect(() => {
+    const fetchOrderDetails = async () => {
+      try {
+        const orderData = await getProduct("order", id);
+        if (orderData && orderData.length > 0) {
+          setOrders(orderData);
+
+          const productPromises = orderData.map((order) =>
+            Promise.all(
+              order.productId.map((productId) =>
+                getProduct("productdes", productId)
+              )
+            )
+          );
+          const resolvedProductPromises = await Promise.all(productPromises);
+          setProductDetails(resolvedProductPromises);
+        }
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    fetchOrderDetails();
+  }, [id]);
+
+  return (
+    <div>
+      {orders.map((order, index) => (
+        <div key={index}>
+          <h3>Order {index + 1}</h3>
+          <p>Customer ID: {order.customerId}</p>
+          <h4>Products:</h4>
+          <ul>
+            {productDetails[index] &&
+              productDetails[index].map((product, idx) => (
+                <li key={idx}>{product.title}</li>
+              ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Order;

@@ -1,0 +1,196 @@
+.product-wrapper{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    place-items: center;
+   grid-template-columns: repeat(4,1fr);
+   gap: 15px;
+   padding: 45px;
+   z-index: -1;
+}
+.product-img{
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.product{
+    width: 345px;
+    height: 470px;
+    background-color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    cursor: pointer;
+    padding: 20px;
+    /* border: 1px solid red; */
+    font-family: "Khula", sans-serif;
+
+
+
+
+}
+
+.img-div{
+    height: 250px;
+}
+.button-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 20px;
+
+}
+.product-details{
+    display: flex;
+    flex-direction: column;
+  
+    /* background-color: red; */
+}
+
+.add-to-cart{
+    width: 88%;
+    height: 36px;
+    border: none;
+    background-color: #0071e3;
+    color: white;
+    border-radius: 7px;
+}
+.heart{
+    width: 12%;
+    height: 36px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    font-size: 19px;
+}
+.red-heart{
+    background-color: red;
+}
+
+.detail-top{
+    /* background-color: red; */
+    height: 75px;
+}
+.title{
+    font-size: 18px;
+    line-height: 18px;
+}
+.category-product-detail{
+    font-size: 14px;
+    color: rgb(145, 145, 145);
+    
+   margin-top: -1px;
+}
+.price{
+    font-size: 18px;
+}
+@media (max-width:1490px){
+    .product-wrapper{
+        grid-template-columns: repeat(3,31%);
+        justify-content: center;
+  align-content: center;
+        padding: 0;
+    }
+}
+
+@media (max-width:940px){
+    .product-wrapper{
+        grid-template-columns: repeat(3,1fr);  
+        padding: 12px;
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+    .product{
+        width: 32vw;
+        /* border: 1px solid black; */
+    }
+}
+
+@media (max-width:670px) {
+    .product-wrapper{
+        grid-template-columns: repeat(2,50vw);
+        justify-content: flex-start;
+        gap: 0;
+        row-gap: 5px;
+        padding: 0;
+    }
+    .product{width: 49vw;
+    height: 420px;
+    padding: 4px;
+    gap: 30px;
+        
+    }
+    .title{
+        font-size: 13px;        
+    }
+    .detail-top{
+        height: 80px;
+    }
+    .img-div{
+        height: 200px;
+    }
+    
+   
+    
+    
+}
+@media (max-width:420px) {
+    .add-to-cart{
+        width: 90%;
+    }
+    .detail-top{
+        height: 90px;
+    }
+    .heart{
+        display: none;
+    }
+    
+    .button-div{
+        width: 100%;
+        justify-content: center;
+        button{
+            width: 100%;
+        }
+    }
+    .title{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .category-product-detail{
+        font-size: 12px;
+    }
+    .price{
+        font-size: 15px;
+    }
+    .product{
+        gap: 30px;
+    }
+
+    
+    
+}
+
+@media (max-width:280px) {
+    .product-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .product{
+        width: 90%;
+        height: 350px;
+        padding: 4px;
+        }
+    .img-div{
+        height: 160px;
+    }
+    .button-div{
+        width: 100%;
+        justify-content: center;
+    }
+    
+}

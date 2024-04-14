@@ -1,0 +1,50 @@
+#found-cat{
+    background-color:white;
+}
+#search-product{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    
+}
+#product-cate{
+    padding: 10px 20px;
+    
+    background-color: white;
+    
+}
+#img-div-cat{
+    mix-blend-mode: normal;
+}
+.category-title{
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-family: "Josephin sans",sans-serif;
+}
+.cat-length{
+    text-align: center ;
+    font-size: 15px;
+    font-weight: 200;
+    font-family: "josephin sans",sans-serif;
+    margin-top: 15px;
+    color: gray;
+
+}
+@media (max-width:460px) {
+    #search-product{
+        padding: 10px;
+    }
+    .cat-length{
+        margin-top: 3px;
+    }
+    .category-title{
+        font-size: 25px;
+    }
+    #product-cate{
+        
+        padding: 0;
+    }
+    
+    
+}

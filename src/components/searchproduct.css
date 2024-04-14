@@ -1,0 +1,50 @@
+.img-div-search{
+    width: 100%;
+    height: 270px;
+    mix-blend-mode: multiply;
+}
+
+.search-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.search-title{
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 450;
+    
+}
+.search-price{
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+@media (max-width:760px) {
+    .search-title{
+        font-size: 12px;
+
+    }
+    .img-div-search{
+        height: 220px;
+    }
+
+    
+}
+@media (max-width:540px) {
+    .img-div-search{
+        width: 100%;
+        height: 170px;
+    }
+    
+}
+@media (max-width:400px) {
+    .search-title{
+        margin-top: 5px;
+        
+    }
+    .img-div-search{
+        height: 145px;
+    }
+    
+}
