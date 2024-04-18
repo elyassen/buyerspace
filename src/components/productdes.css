@@ -118,18 +118,17 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 300px;
-    height: 220px;
-    border-radius: 30px;
-
+    height: 150px;
+    border-radius: 10px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: .9;
-    font-size: 24px;
+    font-size: 20px;
     font-family: "khula",sans-serif;
     line-height: 24px;
-    padding-top:6px;
+    /* padding-top:6px; */
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -138,12 +137,18 @@
     }
 
 }
+.add-model-icon{
+    font-size: 34px;
+}
 .tocart-btn{
     border: none;
     color: white;
-    padding: 6px 10px;
-    border-radius: 15px;
+    padding: 9px 10px;
+    width: 50%;
+    border-radius: 35px;
     background-color: red;
+   font-size: 15px;
+   font-weight:800;
 }
 @media (max-width:540px){
     .description-wrapper{

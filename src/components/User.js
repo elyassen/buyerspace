@@ -33,7 +33,9 @@ function User() {
       <button onClick={handlelogout} className="user-logout-btn">
         Logout
       </button>
-      <button className="sell-products">Sell your products</button>
+      <a href="https://sellerspace.onrender.com/">
+        <button className="sell-products">Sell your products</button>
+      </a>
       <CloseCircleFilled className="user-icon" />
     </div>
   );

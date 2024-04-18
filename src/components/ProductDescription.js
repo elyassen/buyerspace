@@ -25,19 +25,20 @@ function ProductDescription() {
   useEffect(() => {
     setAddModel(false);
     if (products.length == 0) {
+      window.scrollTo(0, 0);
       getProduct("productdes", id).then((res) => {
         setDescription(res);
         console.log(res);
         handleCat(res.category);
       });
-
-      window.scrollTo(0, 0);
     } else {
+      window.scrollTo(0, 0);
       const foundDes = products.filter((pro) => {
         return pro._id === id;
       });
       setDescription(foundDes[0]);
       handleCat(foundDes[0].category);
+      window.scrollTo(0, 0);
     }
   }, [id]);
   const handleWishlist = async () => {
@@ -116,10 +117,10 @@ function ProductDescription() {
       </div>
       {addModel && (
         <div className="add-model">
-          <CheckCircleFilled />
+          <CheckCircleFilled className="add-model-icon" />
           <h3>Added to cart</h3>
           <button className="tocart-btn" onClick={tocart}>
-            go to cart
+            View cart
           </button>
         </div>
       )}
