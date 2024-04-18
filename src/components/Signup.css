@@ -124,17 +124,19 @@ align-items: center;
 .err{
     font-size: 14px;
     border-radius: 4px;
-    background-color: #121212;    color: white;
+    color: white;
     padding: 5px 10px;
     width: 90%;
     text-align: center;
     align-self: flex-start;
     font-weight: 100;
     position: absolute;
-    top: 0;
+    top: 6%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 10px;
+    min-height: 30px;
+    color: red;
+    border: 1px solid red;
 }
 .email-err{
     font-size: 14px;
@@ -146,6 +148,17 @@ align-items: center;
     width: 100%;
     text-align: center;
     padding: 2px;
+}
+.login-loading{
+    width: 96px;
+    text-align: center;
+    color: black;
+    margin-top: 10px;
+    height: max-content;
+    padding:5px;
+    font-size: 14px;
+
+    
 }
 @media (max-width:520px) {
     .signup-login-container{

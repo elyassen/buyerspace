@@ -3,19 +3,21 @@ import "./Signup.css";
 import { addUser } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../utils/utils";
 function Signup() {
   const [signup, setSignup] = useState(false);
   const [count, setCount] = useState(1);
   const [err, setErr] = useState(null);
   const [emailerr, setEmailerr] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [user, setUser] = useState({
     name: "",
-    email: "ysn@gmail.com",
-    password: "123",
-    address: "acc",
-    phone: "93939",
+    email: "",
+    password: "",
+    address: "",
+    phone: "",
   });
   const handleclick = () => {
     if (count == 1) {
@@ -30,7 +32,7 @@ function Signup() {
   };
   const handlesignup = async () => {
     try {
-      const req = await fetch("http://localhost:3001/customers", {
+      const req = await fetch(`${BASE_URL}/customers`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -57,25 +59,33 @@ function Signup() {
     }
   };
   const handleLogin = async () => {
+    setLoading(true);
     const { email, password } = user;
     console.log(email, password);
     try {
-      const req = await fetch("http://localhost:3001/customers/verify", {
+      const req = await fetch(`${BASE_URL}/customers/verify`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
-      handledispatch(req);
+      const res = await req.json();
+      if (req.status == 200) {
+        handledispatch(res);
+        setLoading(false);
+      }
+      if (req.status == 400) {
+        setErr(res.msg);
+        setLoading(false);
+      }
+      console.log(res);
     } catch (e) {
       console.log(e);
     }
   };
-  const handledispatch = async (req) => {
-    const res = await req.json();
+  const handledispatch = async (res) => {
     console.log(res);
-    setErr(res);
     dispatch(addUser(res.user));
     navigate("/");
   };
@@ -160,6 +170,7 @@ function Signup() {
         ) : (
           <div className="login-container">
             <h3>Login</h3>
+            {err && <p className="err">{err}</p>}
             <div className="signup-inpt">
               <h4 className="label">Email</h4>
               <input
@@ -189,6 +200,7 @@ function Signup() {
                 sign up
               </span>
             </p>
+            {loading && <div className="login-loading">loading...</div>}
           </div>
         )}
       </div>

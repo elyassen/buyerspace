@@ -53,7 +53,7 @@ function Header() {
   return (
     <div className="header-wrapper">
       <div className="header">
-        <h3 onClick={handleclick}>Header</h3>
+        <h3 onClick={handleclick}>"Logo"</h3>
 
         <div className="right-header">
           <div onClick={handleUser} className="header-icons user-wrapper">

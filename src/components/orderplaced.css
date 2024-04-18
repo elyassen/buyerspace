@@ -1,0 +1,41 @@
+.check-icon{
+    font-size: 60px;
+    
+}
+.order-placed-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 14px;    
+    flex-direction: column;
+    font-family: "josephin sans",sans-serif;
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    
+    button{
+        
+       background-color: #86003c;
+       color: white;
+       padding: 6px 14px;
+       border: none;
+       border-radius: 16px;
+       margin-top: 9px;
+       font-size: 15px;
+      
+
+    }
+   
+}
+.text-order-placed{
+    text-align: center;
+    justify-self: flex-end;
+    
+    h4{
+       
+        font-weight: 400;
+        
+    }
+ 
+}
+

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../utils/utils";
+import { BASE_URL, getProduct } from "../utils/utils";
 import "./wishlist.css";
 import SearchProducts from "./SearchProducts";
+import { CloseCircleFilled } from "@ant-design/icons";
 
 function Wishlist() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function Wishlist() {
     });
   };
   const removeWishlist = async (product) => {
-    const req = await fetch(`http://localhost:3001/wishlist/${id}`, {
+    const req = await fetch(`${BASE_URL}/wishlist/${id}`, {
       method: "delete",
       headers: {
         "content-type": "application/json",
@@ -32,27 +33,34 @@ function Wishlist() {
       getdata();
     }
   };
+  console.log(wishlist);
   return (
-    <div className="found">
-      {wishlist?.map((product) => (
-        <div
-          key={product._id}
-          className="search-product-list"
-          id="wish-product"
-        >
-          <SearchProducts product={product} />
-          <div className="wish-btns">
-            <button className="wish-add">Add to cart</button>
-            <button
-              className="wish-remove"
-              onClick={() => removeWishlist(product)}
-            >
-              Remove from cart
-            </button>
-          </div>
-          <div className="overlay"></div>
-        </div>
-      ))}
+    <div className="wishlist-wrapper">
+      <div className="wishlist-header">
+        <h1> Wishlist</h1>
+        <h1>{wishlist.length} Items</h1>
+      </div>
+      <div className="product-wrapper-wishlist">
+        {wishlist?.map((product) => {
+          return (
+            <div className="wishlist-product">
+              <div className="img-div-wishlist">
+                <img src={product.images[0]} />
+              </div>
+              <h1 className="wishlist-title">
+                {product.title.substring(0, 50)}
+              </h1>
+              <button className="wish-add-btn">Add to cart</button>
+              <button
+                onClick={() => removeWishlist(product)}
+                className="remove-wish"
+              >
+                <CloseCircleFilled />
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

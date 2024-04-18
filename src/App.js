@@ -8,6 +8,8 @@ import ProductDescription from "./components/ProductDescription";
 import Signup from "./components/Signup";
 import Wishlist from "./components/Wishlist";
 import Order from "./components/Order";
+import { BASE_URL } from "./utils/utils";
+import { useEffect } from "react";
 
 function App() {
   return (
