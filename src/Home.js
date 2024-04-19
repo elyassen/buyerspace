@@ -4,8 +4,11 @@ import Header from "./components/Header";
 import { BASE_URL } from "./utils/utils";
 import Products from "./components/Products";
 import { CloseCircleFilled } from "@ant-design/icons";
+import { useSelector } from "react-redux";
 function Home() {
-  const [Server, setServer] = useState(false);
+  const [Server, setServer] = useState(true);
+  const products = useSelector((state) => state.products);
+  console.log(products);
   useEffect(() => {
     async function startServer() {
       const req = await fetch(`${BASE_URL}/`);
@@ -15,7 +18,12 @@ function Home() {
         setServer(true);
       }
     }
-    startServer();
+    if (products.length == 0) {
+      setServer(false);
+      startServer();
+    } else {
+      setServer(true);
+    }
   }, []);
   return (
     <>
