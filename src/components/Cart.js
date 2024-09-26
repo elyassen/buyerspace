@@ -14,7 +14,8 @@ function Cart() {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const navigate = useNavigate();
 
-  // Calculate total price when cart changes
+console.log(cart);
+
   useEffect(() => {
     const totalprice = cart.reduce((total, item) => total + item.price, 0);
     setTotal(totalprice);

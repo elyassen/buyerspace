@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import User from "./User";
 function Header() {
   const [search, setSearch] = useState(false);
+  const cart = useSelector((state)=>state.cart)
+  
   const [searchInput, setSearchInput] = useState("");
   const [found, setFound] = useState([]);
   const [showUser, setShowUser] = useState(false);
@@ -60,11 +62,12 @@ function Header() {
             <UserOutlined />
             {showUser && <User />}
           </div>
-          <div onClick={() => setSearch(!search)} className="header-icons">
+          <div onClick={() => setSearch(!search)} className="header-icons" >
             <SearchOutlined />
           </div>
-          <div onClick={handlecart} className="header-icons">
+          <div onClick={handlecart} className="header-icons " id="cart-icon-header">
             <ShoppingCartOutlined />
+            {cart.length>0 && <span className="cart-length-header">{cart.length}</span>}
           </div>
           <div className="become-seller">Become a seller</div>
         </div>

@@ -167,6 +167,14 @@
     height: 40px;
     color: black;
 }
+
+#cart-icon-header{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
 @media (max-width:660px) {
     .found{
         grid-template-columns: repeat(3,1fr);

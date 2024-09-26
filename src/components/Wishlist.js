@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL, getProduct } from "../utils/utils";
 import "./wishlist.css";
-import SearchProducts from "./SearchProducts";
 import { CloseCircleFilled } from "@ant-design/icons";
 
 function Wishlist() {
@@ -50,7 +49,7 @@ function Wishlist() {
               <h1 className="wishlist-title">
                 {product.title.substring(0, 50)}
               </h1>
-              <button className="wish-add-btn">Add to cart</button>
+              <button  onClick={() => removeWishlist(product)} className="wish-add-btn">Add to cart</button>
               <button
                 onClick={() => removeWishlist(product)}
                 className="remove-wish"

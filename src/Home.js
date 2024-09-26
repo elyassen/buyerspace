@@ -3,17 +3,14 @@ import Categories from "./components/Categories";
 import Header from "./components/Header";
 import { BASE_URL } from "./utils/utils";
 import Products from "./components/Products";
-import { CloseCircleFilled } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 function Home() {
   const [Server, setServer] = useState(true);
   const products = useSelector((state) => state.products);
-  console.log(products);
   useEffect(() => {
     async function startServer() {
       const req = await fetch(`${BASE_URL}/`);
       const res = await req.json();
-      console.log(res);
       if (res.status === "true") {
         setServer(true);
       }
@@ -35,10 +32,12 @@ function Home() {
       ) : (
         <div className="server-start-div">
           <h2>
-            Server inactive. Activating shortly. Hosted on Render free-tier
+            Server inactive
           </h2>
+          <p> We appreciate your patience as our server is currently inactive. 
+    It typically takes around 50 seconds for the server to fully activate and become operational. During this time, essential processes are being initialized to ensure a seamless experience for you once it's ready.</p>
           <div className="loading-server"></div>
-          <p>please wait..</p>
+          
         </div>
       )}
     </>
